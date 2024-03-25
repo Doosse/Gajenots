@@ -52,7 +52,7 @@ ytaudio *link youtube*
  sesuai dengan service yang didukung:
  [https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
 
-### Youtube
+#### Youtube
 
 Untuk *youtube*, saya menggunakan config yaitu `ytconfig` yang terletak
 di `~/.config/yt-dlp/ytconfig`
@@ -78,4 +78,36 @@ Cara penggunaan:
 
 ```bash
 ytvideo *link youtube*
+```
+
+#### Vidio
+
+Untuk *vidio*, saya menggunakan config yaitu `vidconfig` yang terletak
+di `~/.config/yt-dlp/vidconfig`
+
+```bash
+--output "$HOME/downloads/video/vidio_%(title)s.%(ext)s"
+--check-formats
+--sub-format best
+--sub-langs id
+--embed-thumbnail
+--embed-subs
+
+```
+
+dengan file config khusus ini, saya menggunakan alias berikut untuk
+mempermudah dalam penggunaannya.
+
+```bash
+alias downvidio='yt-dlp --config-location ~/.config/yt-dlp/vidconfig'
+```
+
+File config ini akan mendownload versi terbaik dari format yang tersedia kemudian
+mendownload thumbnail dan subtitle lalu menggabungkannya menjadi satu file `.mp4`.
+Jika ingin mendownload format lain, sesuaikan dengan keinginan.
+
+Cara penggunaan:
+
+```bash
+downvidio *link vidio*
 ```
