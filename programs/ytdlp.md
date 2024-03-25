@@ -39,3 +39,43 @@ untuk mempermudah dalam penggunaannya.
 ```bash
 alias ytaudio='yt-dlp --config-location ~/.config/yt-dlp/audioconfig'
 ```
+
+Cara penggunaan:
+
+```bash
+ytaudio *link youtube*
+```
+
+### Video
+
+ Untuk konfigurasi video, saya juga menggunakan config spesifik
+ sesuai dengan service yang didukung:
+ [https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
+
+### Youtube
+
+Untuk *youtube*, saya menggunakan config yaitu `ytconfig` yang terletak
+di `~/.config/yt-dlp/ytconfig`
+
+```bash
+--embed-thumbnail
+--merge-output-format mp4
+-f 'bv*+ba'
+-o '$HOME/downloads/yt_%(id)s.%(ext)s'
+```
+
+dengan file config khusus ini, saya menggunakan alias berikut untuk
+mempermudah dalam penggunaannya.
+
+```bash
+alias ytvideo='yt-dlp --config-location ~/.config/yt-dlp/ytconfig'
+```
+
+File config ini akan mendownload versi terbaik dari format yang tersedia.
+Jika ingin mendownload format lain, sesuaikan dengan keinginan.
+
+Cara penggunaan:
+
+```bash
+ytvideo *link youtube*
+```
